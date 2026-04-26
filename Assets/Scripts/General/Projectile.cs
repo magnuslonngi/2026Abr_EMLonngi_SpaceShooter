@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Vector2 _direction = new Vector2(1, 0);
     [SerializeField] private int _damage = 5;
     [SerializeField][Range(1, 10)] private int _collisionQuantity = 1;
+    [SerializeField] private bool _keepProjectile = false;
 
     private int _collisionCount = 0;
 
@@ -30,7 +31,7 @@ public class Projectile : MonoBehaviour
 
             if (!(_collisionQuantity >= _collisionCount)) return;
 
-            Destroy(gameObject);
+            if (!_keepProjectile) Destroy(gameObject);
         }
     }
 }

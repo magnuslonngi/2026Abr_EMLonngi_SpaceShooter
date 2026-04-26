@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7015040064524343222}
   - component: {fileID: 9077694115986935504}
   - component: {fileID: 6415485633796454465}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -137,7 +137,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -181,6 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   _speed: 15
   _direction: {x: 1, y: -1}
+  _damage: 5
   _collisionQuantity: 1
 --- !u!1 &1207735857831535335
 GameObject:
@@ -191,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784301436877560740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Double Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +229,7 @@ GameObject:
   - component: {fileID: 2595296246868655512}
   - component: {fileID: 8087379655539909941}
   - component: {fileID: 3057545847265067799}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Projectile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +332,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -352,7 +353,7 @@ BoxCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -396,4 +397,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   _speed: 15
   _direction: {x: 1, y: 1}
+  _damage: 5
   _collisionQuantity: 1

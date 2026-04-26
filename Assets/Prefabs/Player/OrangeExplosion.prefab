@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3135554573890409159}
   - component: {fileID: 4415114901520861600}
   - component: {fileID: 7334252741228258966}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: OrangeExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
