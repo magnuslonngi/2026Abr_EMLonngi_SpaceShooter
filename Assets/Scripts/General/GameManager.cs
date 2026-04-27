@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private RectTransform _playerHealthBar;
+    [SerializeField] private Text _playerScoreText;
+
     private int _gameScore = 0;
 
     private float _startingHealth;
@@ -15,7 +17,9 @@ public class GameManager : MonoBehaviour
     {
         _currentHealth = _startingHealth = _player.GetComponent<Hittable>().HealthPoints;
         _healthBarStartingWidth = _playerHealthBar.rect.width;
+
         UpdateHealth(_startingHealth);
+        UpdateScore(0);
     }
 
     public void UpdateHealth(float healthPoints)
@@ -28,5 +32,6 @@ public class GameManager : MonoBehaviour
     public void UpdateScore(int score)
     {
         _gameScore += score;
+        _playerScoreText.text =  _gameScore.ToString();
     }
 }
