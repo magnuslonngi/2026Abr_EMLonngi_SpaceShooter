@@ -201,6 +201,11 @@ MonoBehaviour:
   _collisionDamage: 10
   _isPlayer: 0
   _explosionPrefab: {fileID: 2923439743002791175, guid: 55eb69389ca3e4fceaf73e9ca9130f7c, type: 3}
+  _powerUpSpawnPercentage: 10
+  _powerUpsPrefabs:
+  - {fileID: 5457015923863470834, guid: 45e7d5096f1424a15a223e19fbdba7db, type: 3}
+  - {fileID: 9109898721328563604, guid: 9e02dc6d70af34e8795d4a98b7d92fe1, type: 3}
+  - {fileID: 132100955245183677, guid: 3ac31db2eb036413ea4f77c4f767b7d9, type: 3}
 --- !u!114 &5186889140679486424
 MonoBehaviour:
   m_ObjectHideFlags: 0

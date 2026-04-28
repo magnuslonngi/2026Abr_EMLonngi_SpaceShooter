@@ -19,20 +19,34 @@ public class EnemySpawner : MonoBehaviour
         if (_useLimits) StartCoroutine(SpawnEnemyWithLimits());
         else StartCoroutine(SpawnEnemiesWithoutLimits());
 
-        StartCoroutine(CountDown());
     }
 
     private IEnumerator SpawnEnemyWithLimits()
     {
         yield return new WaitForSeconds(_startAfter);
+        StartCoroutine(CountDown());
 
-        while (_elapsedSeconds < _duration)
+        if (_duration == 0)
         {
-            Vector3 spawnPosition = Vector3.Lerp(_upLimit.position, _downLimit.position, Random.Range(0f, 1f));
-            Instantiate(_enemyPrefab, spawnPosition, _enemyPrefab.transform.rotation);
+            while (true)
+            {
+                Vector3 spawnPosition = Vector3.Lerp(_upLimit.position, _downLimit.position, Random.Range(0f, 1f));
+                Instantiate(_enemyPrefab, spawnPosition, _enemyPrefab.transform.rotation);
 
-            yield return new WaitForSeconds(_spawnRate);
+                yield return new WaitForSeconds(_spawnRate);
+            }
         }
+        else
+        {
+            while (_elapsedSeconds < _duration)
+            {
+                Vector3 spawnPosition = Vector3.Lerp(_upLimit.position, _downLimit.position, Random.Range(0f, 1f));
+                Instantiate(_enemyPrefab, spawnPosition, _enemyPrefab.transform.rotation);
+
+                yield return new WaitForSeconds(_spawnRate);
+            }
+        }
+
 
         Destroy(gameObject);
     }
@@ -40,12 +54,25 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator SpawnEnemiesWithoutLimits()
     {
         yield return new WaitForSeconds(_startAfter);
+        StartCoroutine(CountDown());
 
-        while (_elapsedSeconds < _duration)
+        if (_duration == 0)
         {
-            Instantiate(_enemyPrefab, transform.position, _enemyPrefab.transform.rotation);
+            while (true)
+            {
+                Instantiate(_enemyPrefab, transform.position, _enemyPrefab.transform.rotation);
 
-            yield return new WaitForSeconds(_spawnRate);
+                yield return new WaitForSeconds(_spawnRate);
+            }
+        }
+        else
+        {
+            while (_elapsedSeconds < _duration)
+            {
+                Instantiate(_enemyPrefab, transform.position, _enemyPrefab.transform.rotation);
+
+                yield return new WaitForSeconds(_spawnRate);
+            }
         }
 
         Destroy(gameObject);

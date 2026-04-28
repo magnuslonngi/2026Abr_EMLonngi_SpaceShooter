@@ -10,6 +10,11 @@ public class MainMenuManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
     public void ShowCredits()
     {
         _creditsUI.SetActive(true);

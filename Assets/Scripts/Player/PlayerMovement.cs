@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,10 +11,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Sprite _defaultSprite;
     [SerializeField] private Sprite _downSprite;
     [SerializeField] private Sprite _upSprite;
+    [SerializeField] private int _maxPowerUpsPicks = 3;
 
     private Rigidbody2D _rigidbody2D;
     private Vector2 _moveDirection;
     private SpriteRenderer _spriteRenderer;
+    private int _currentPowerUpsApplied = 0;
 
     private void Awake()
     {
@@ -39,6 +42,12 @@ public class PlayerMovement : MonoBehaviour
         _moveInput.action.Disable();
     }
 
+    private void OnDestroy()
+    {
+        _moveInput.action.performed -= OnMove;
+        _moveInput.action.canceled -= OnMove;
+    }
+
     private void OnMove(InputAction.CallbackContext context)
     {
         _moveDirection = context.ReadValue<Vector2>();
@@ -57,4 +66,22 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+    public IEnumerator TemporalIncreaseSpeed(float duration, float speedToIncrease)
+    {
+        bool cantPowerUp = _currentPowerUpsApplied >= _maxPowerUpsPicks;
+
+        if (!cantPowerUp)
+        {
+            _speed += speedToIncrease;
+            _currentPowerUpsApplied++;
+
+            yield return new WaitForSeconds(duration);
+
+            _speed -= speedToIncrease;
+            _currentPowerUpsApplied--;
+        }
+
+        yield return null;
+   }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3706776329617995449
+--- !u!1 &5457015923863470834
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5016995292697582921}
-  - component: {fileID: 1056706450899342009}
-  - component: {fileID: 2848792052832043370}
-  - component: {fileID: 1409681065410348132}
-  - component: {fileID: 3315236632295365469}
-  - component: {fileID: 7267199545213316192}
-  - component: {fileID: 1323052144877491407}
-  m_Layer: 7
-  m_Name: Enemy2
+  - component: {fileID: 1494005744777213972}
+  - component: {fileID: 4559614247354588104}
+  - component: {fileID: 5522095896192117613}
+  - component: {fileID: 6045026871397552454}
+  - component: {fileID: 57873471908999146}
+  m_Layer: 0
+  m_Name: HealthPowerUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5016995292697582921
+--- !u!4 &1494005744777213972
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706776329617995449}
+  m_GameObject: {fileID: 5457015923863470834}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
---- !u!212 &1056706450899342009
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4559614247354588104
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706776329617995449}
+  m_GameObject: {fileID: 5457015923863470834}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -84,9 +82,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 594764569497763269, guid: 796f4f55961b24d0088dbbe7bd550ee8, type: 3}
+  m_Sprite: {fileID: -1088810213, guid: 29ea84937ca624190bac08747fba257f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,14 +94,14 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!50 &2848792052832043370
+--- !u!50 &5522095896192117613
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706776329617995449}
+  m_GameObject: {fileID: 5457015923863470834}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -122,14 +120,14 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!61 &1409681065410348132
+  m_Constraints: 0
+--- !u!61 &6045026871397552454
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706776329617995449}
+  m_GameObject: {fileID: 5457015923863470834}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -153,11 +151,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.06, y: -0.06}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -167,60 +165,25 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3315236632295365469
+--- !u!114 &57873471908999146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706776329617995449}
+  m_GameObject: {fileID: 5457015923863470834}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87c263b59789243358e419324ba5b61c, type: 3}
+  m_Script: {fileID: 11500000, guid: a092035349aa8462dbc98940deda6f90, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  m_EditorClassIdentifier: Assembly-CSharp::PowerUp
   _speed: 5
   _direction: {x: -1, y: 0}
---- !u!114 &7267199545213316192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706776329617995449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2936d8bb5863f425ab73f406f11e20dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Hittable
-  HealthPoints: 5
-  _onDestroyScore: 15
-  _destroyOnCollision: 1
-  _collisionDamage: 10
-  _isPlayer: 0
-  _explosionPrefab: {fileID: 2923439743002791175, guid: 55eb69389ca3e4fceaf73e9ca9130f7c, type: 3}
-  _powerUpSpawnPercentage: 10
-  _powerUpsPrefabs:
-  - {fileID: 5457015923863470834, guid: 45e7d5096f1424a15a223e19fbdba7db, type: 3}
-  - {fileID: 9109898721328563604, guid: 9e02dc6d70af34e8795d4a98b7d92fe1, type: 3}
-  - {fileID: 132100955245183677, guid: 3ac31db2eb036413ea4f77c4f767b7d9, type: 3}
---- !u!114 &1323052144877491407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3706776329617995449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 406e802b20dff42aebad9d788d7cfde4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyBounce
-  _bounceHorizontal: 1
-  _bounceVertical: 0
-  _upLimit: 4.875
-  _downLimit: -4.875
-  _leftLimit: -8.875
-  _rightLimit: 8.875
+  _powerUpType: 2
+  _speedBoostDuration: 6
+  _speedBoostIncrease: 2
+  _fireRateDuration: 6
+  _fireRateIncrese: 0.1
+  _healthIncrease: 10

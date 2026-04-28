@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 public class EnemyShoot : MonoBehaviour
 {
     [SerializeField] private GameObject _projectilePrefab;
@@ -8,6 +9,12 @@ public class EnemyShoot : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
 
     private bool _canShoot = true;
+    private AudioSource _audioSource;
+
+    private void Awake()
+    {
+        _audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -16,6 +23,8 @@ public class EnemyShoot : MonoBehaviour
         Instantiate(_projectilePrefab, _spawnPoint.position, _projectilePrefab.transform.rotation);
 
         _canShoot = false;
+        _audioSource.Play();
+
         StartCoroutine(ShootDelay());
     }
 
